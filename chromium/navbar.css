@@ -1,0 +1,56 @@
+#sepiaFW-on-page-tab-controls {
+	background: #000;
+	color: #fff;
+	width: 100vw;
+	height: 38px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	z-index: 2147483647;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+}
+
+#sepiaFW-on-page-tab-controls  * {
+    box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#sepiaFW-on-page-tab-controls input:focus,
+#sepiaFW-on-page-tab-controls select:focus,
+#sepiaFW-on-page-tab-controls textarea:focus,
+#sepiaFW-on-page-tab-controls button:focus {
+    outline: none;
+}
+#sepiaFW-on-page-tab-controls ::-moz-focus-inner {
+	border:0;
+}
+#sepiaFW-on-page-tab-controls button {
+	-webkit-user-select: none;  
+	-moz-user-select: none;    
+	-ms-user-select: none;      
+	user-select: none;
+	touch-action: manipulation;
+	cursor: pointer;
+}
+
+#sepiaFW-on-page-tab-controls > button,
+#sepiaFW-on-page-tab-controls > a {
+	color: #fff;
+	margin: 0px;
+	width: 38px;
+	height: 38px;
+	border: 0;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	background-color: transparent;
+    background-position: center;
+}
+#sepiaFW-on-page-close-btn {
+	background-image: url("chrome-extension://__MSG_@@extension_id__/images/ctrl-close.svg");
+}
+#sepiaFW-on-page-add-btn {
+	background-image: url("chrome-extension://__MSG_@@extension_id__/images/ctrl-add.svg");
+}

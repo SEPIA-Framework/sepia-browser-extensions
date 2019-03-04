@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			html, body {
+				background: #000;
+				color: #eee;
+				font-family: sans-serif
+				margin: 0;
+				padding: 0;
+			}
+			label {
+				margin: 4px 8px 4px 0;
+				display: inline-block;
+				font-size: 14px;
+			}
+			input {
+				border: 0;
+				outline: none;
+				padding: 4px 8px;
+				width: 240px;;
+			}
+			button {
+				background: #beff1a;
+				color: #222;
+				border: 0;
+				border-radius: 3px;
+				outline: none;
+				margin-right: 8px;
+				margin-bottom: 8px;
+				padding: 4px 8px;
+				cursor: pointer;
+			}
+			.group {
+				width: calc(100% - 32px);
+				margin: 8px 16px 16px 16px;
+			}
+			.group.flex {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.group:last-of-type {
+				margin-bottom: 24px;
+			}
+			
+			#store-changes {
+				margin-right: 0;
+			}
+			
+			.toggle-container {
+				width: 58px;
+				height: 20px;
+				position: relative;
+				border: 1px solid #eee;
+				overflow: hidden;
+				border-radius: 3px;
+			}
+			.toggle-button {
+				background: #333;
+				width: 28px;
+				height: 18px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				cursor: pointer;
+			}
+			.toggle-button.active {
+				background: #beff1a;
+				left: auto;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="group">
+			<h3>SEPIA Chrome-Extension Settings</h3>
+		</div>
+		<div class="group" style="text-align: center;">
+			<img src="images/icon48.png">
+		</div>
+		<div class="group">
+			<label>User-Agent:</label><br>
+			<input id="custom-user-agent-string" value="Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Mobile Safari/537.36">
+		</div>
+		<div class="group flex">
+			<button id="restore-default">Default</button>
+			<button id="set-chrome-mobile">Chrome mobile</button>
+			<button id="store-changes">Save</button>
+		</div>
+		<div class="group flex">
+			<label>Use navigation bar:</label>
+			<div class="toggle-container"><div id="use-navbar" class="toggle-button"></div></div>
+		</div>
+		<script src="popup.js"></script>
+	</body>
+</html>
