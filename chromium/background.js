@@ -20,7 +20,9 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     function(info){
 		if (customHeader){
 			//Page exceptions (we can't add this to request filter unfortunately)
-			if (info.url.indexOf('https://sepia-framework.github.io') >= 0){
+			if ((info.url.indexOf('https://sepia-framework.github.io') >= 0) 
+				|| (info.url.indexOf('spotify.com') >= 0 && customHeader.indexOf('Mobile') >=0)
+				){
 				return;
 			}
 			//Replace the User-Agent header
