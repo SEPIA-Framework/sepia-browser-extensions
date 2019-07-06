@@ -1,7 +1,7 @@
 {
   "name": "S.E.P.I.A. Framework Tools",
   "short_name": "SEPIA Tools",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "author": "Bytemind.de",
   "homepage_url": "https://sepia-framework.github.io/",
   "description": "Browser tools for SEPIA open-source, voice-assistant framework.",
@@ -18,7 +18,7 @@
   },
   "content_scripts": [{
 	"matches": ["<all_urls>"],
-	"exclude_matches": ["https://sepia-framework.github.io/*"],
+	"exclude_matches": ["https://sepia-framework.github.io/*", "*://localhost:*/*", "*://127.0.0.1:*/*", "*://*/sepia/assist/*", "*://*.local/*"],
 	"run_at": "document_end",
 	"js": ["navbar.js"],
 	"css": ["navbar.css"]
