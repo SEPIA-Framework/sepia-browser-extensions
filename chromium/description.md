@@ -3,7 +3,7 @@ SEPIA is an open-source, digital voice-assistant that runs on your own server, e
 This extensions simply adds 2 additional functions to better handle kiosk mode apps:
   
 - Switch the user-agent to Chrome mobile or any custom string
-- Show/hide an additional navigation bar overlay to close tabs
+- Show/hide an additional navigation bar overlay (excluding localhost and SEPIA paths) to close tabs
   
 More functions might be added over time as needed ;-)
   
