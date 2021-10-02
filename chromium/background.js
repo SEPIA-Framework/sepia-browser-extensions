@@ -2,12 +2,17 @@
 
 //Modify header (Part 1)
 
-//Android mobile Chrome header (March 2019):
-let customHeader = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Mobile Safari/537.36";
+//Header examples - Pretend to be Android mobile Chrome:
+let customHeader = "";
+//let chromeMobileHeader = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Mobile Safari/537.36";		//March 2019
+let chromeMobileHeader = "Mozilla/5.0 (Linux; Android 9.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Mobile Safari/537.36";		//June 2021
 
 function reloadCustomUserAgent(){
 	chrome.storage.local.get(['customUserAgentString'], function(result){
-		if (result.customUserAgentString){
+		if (result.customUserAgentString == undefined){
+			//default:
+			customHeader = chromeMobileHeader;
+		}else if (result.customUserAgentString){
 			customHeader = result.customUserAgentString;
 		}else{
 			customHeader = "";
