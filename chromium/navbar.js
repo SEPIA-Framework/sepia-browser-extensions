@@ -26,7 +26,8 @@ function closeTab(){
 }
 
 chrome.storage.local.get(['useNavBar'], function(result){
-	if (result.useNavBar){
+	if (result.useNavBar || result.useNavBar == undefined){
+		//default:
 		sepiaAddBrowserControls();
 	}
 });

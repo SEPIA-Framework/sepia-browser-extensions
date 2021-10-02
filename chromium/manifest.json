@@ -1,7 +1,7 @@
 {
   "name": "S.E.P.I.A. Framework Tools",
   "short_name": "SEPIA Tools",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "author": "Bytemind.de",
   "homepage_url": "https://sepia-framework.github.io/",
   "description": "Browser tools for SEPIA open-source, voice-assistant framework.",

@@ -6,18 +6,23 @@ let restoreDefault = document.getElementById('restore-default');
 let setChromeMobile = document.getElementById('set-chrome-mobile');
 let useNavbarButton = document.getElementById('use-navbar');
 
-let chromeMobileHeader = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Mobile Safari/537.36";
+//Header examples - Pretend to be Android mobile Chrome (see background.js for more examples):
+let chromeMobileHeader = "Mozilla/5.0 (Linux; Android 9.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Mobile Safari/537.36";		//June 2021
 
 //Restore settings
 chrome.storage.local.get(['customUserAgentString', 'useNavBar'], function(result){
 	//User-Agent
-	if (result.customUserAgentString){
+	if (result.customUserAgentString == undefined){
+		//default:
+		customUserAgentString.value = chromeMobileHeader;
+	}else if (result.customUserAgentString){
 		customUserAgentString.value = result.customUserAgentString;
 	}else{
 		customUserAgentString.value = "";
 	}
 	//Navbar
-	if (result.useNavBar){
+	if (result.useNavBar || result.useNavBar == undefined){
+		//default:
 		useNavbarButton.classList.add('active');
 	}
 });
